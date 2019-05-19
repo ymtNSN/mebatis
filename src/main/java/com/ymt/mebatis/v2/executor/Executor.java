@@ -5,5 +5,6 @@ package com.ymt.mebatis.v2.executor;
  * @Author yangmingtian
  * @Date 2019/5/15
  */
-public class Executor {
+public interface Executor {
+    <T> T query(String statement, Object[] parameter, Class pojo);
 }

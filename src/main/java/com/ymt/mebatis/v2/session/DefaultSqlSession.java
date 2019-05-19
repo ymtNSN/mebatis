@@ -17,4 +17,17 @@ public class DefaultSqlSession {
         this.configuration = configuration;
         this.executor = configuration.newExecutor();
     }
+
+    public Configuration getConfiguration() {
+        return configuration;
+    }
+
+    public <T> T getMapper(Class<T> clazz) {
+        return configuration.getMapper(clazz, this);
+    }
+
+    public <T> T selectOne(String statement, Object[] parameter, Class pojo) {
+        String sql = configuration.getMapperStatement(statement);
+        return executor.query(sql, parameter, pojo);
+    }
 }

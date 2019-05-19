@@ -9,7 +9,7 @@ import java.sql.Timestamp;
 
 public class RolesEntity {
 
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -21,11 +21,11 @@ public class RolesEntity {
 
     private Timestamp updatedAt;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
